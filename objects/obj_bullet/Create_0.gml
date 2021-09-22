@@ -17,3 +17,5 @@ else {
 	direction = 0;
 	x = x + 30;
 }
+
+image_angle = direction;

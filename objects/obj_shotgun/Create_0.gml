@@ -1,0 +1,1 @@
+fire_delay = 120; // 2 second

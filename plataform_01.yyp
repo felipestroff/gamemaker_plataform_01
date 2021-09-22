@@ -8,7 +8,6 @@
     {"id":{"name":"obj_shotgun","path":"objects/obj_shotgun/obj_shotgun.yy",},"order":4,},
     {"id":{"name":"spr_portal","path":"sprites/spr_portal/spr_portal.yy",},"order":3,},
     {"id":{"name":"spr_player_shotgun","path":"sprites/spr_player_shotgun/spr_player_shotgun.yy",},"order":5,},
-    {"id":{"name":"Sprite6","path":"sprites/Sprite6/Sprite6.yy",},"order":15,},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},"order":5,},
     {"id":{"name":"obj_portal","path":"objects/obj_portal/obj_portal.yy",},"order":3,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
@@ -58,7 +57,7 @@
     "IDEVersion": "2.3.4.583",
   },
   "resourceVersion": "1.4",
-  "name": "plataforma_01",
+  "name": "plataform_01",
   "tags": [],
   "resourceType": "GMProject",
 }

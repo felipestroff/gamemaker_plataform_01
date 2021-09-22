@@ -34,16 +34,18 @@ if (place_meeting(x, y + vspd,  obj_floor)) {
 y = y + vspd;
 
 // Jump
-if (place_meeting(x, y + 1, obj_floor) and key_jump) {
+if (place_meeting(x, y + 1, obj_floor) && key_jump) {
 	vspd -= 8;
 }
 
 // Shot
 if (got_gun) {
 	if (key_shot) {
+		var bullet = obj_bullet;
+	
 		sprite_index = spr_player_shotgun_fire;
 	
-		instance_create_layer(x, y, "lyr_bullet", obj_bullet);
+		instance_create_layer(x, y, "lyr_bullet", bullet);
 	}
 	else {
 		sprite_index = spr_player_shotgun;

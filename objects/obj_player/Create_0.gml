@@ -1,3 +1,4 @@
+hp = 100;
 spd = 5;
 hspd = 0;
 vspd = 0;
@@ -6,3 +7,4 @@ weapon = "";
 count_weapons = 0;
 can_shoot = true;
 fire_delay = 0;
+can_damage = true;

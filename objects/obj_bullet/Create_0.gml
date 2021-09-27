@@ -1,13 +1,10 @@
-spd = 10;
-sprite = "";
+spd = 0;
+dmg = 0;
 
 var player = obj_player;
 
 x = player.x;
 y = player.y;
-
-//direction = direction + random_range(-5, 5);
-speed = spd;
 
 // Copy player directions
 if (player.image_xscale <= -1) {
@@ -20,16 +17,21 @@ else {
 }
 image_angle = direction;
 
+// Change bullet sprite for weapon
+sprite_index = asset_get_index("spr_bullet_" + string(player.weapon))
+
 // Check player weapon
 switch (player.weapon) {
 	case "pistol":
 		y = y + 9;
+		dmg = random_range(15, 35);
+		spd = 10;
 		break;
 	case "shotgun":
 		y = y + 14;
+		dmg = random_range(50, 100);
+		spd = 15;
 		break;
 }
 
-// Change bullet sprite for weapon
-var sprite = asset_get_index("spr_bullet_" + string(player.weapon));
-sprite_index = sprite;
+speed = spd;

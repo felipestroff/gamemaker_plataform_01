@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_block_death",
-    "path": "sprites/spr_block_death/spr_block_death.yy",
+    "name": "spr_enemy_wall",
+    "path": "sprites/spr_enemy_wall/spr_enemy_wall.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,7 +28,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_block_death",
+  "name": "obj_enemy_wall",
   "tags": [],
   "resourceType": "GMObject",
 }

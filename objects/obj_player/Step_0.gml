@@ -78,3 +78,16 @@ if (weapon != "") {
 }
 
 #endregion
+
+#region HP
+
+if (hp <= 0) {
+	// Move player to start
+	x = obj_portal.x;
+	y = obj_portal.y;
+	
+	// Reset HP
+	hp = 100;
+}
+
+#endregion

@@ -2,7 +2,7 @@
 key_right = keyboard_check(ord("D")); // Right (+x)
 key_left = keyboard_check(ord("A")); // Left (-x)
 key_jump = keyboard_check(vk_space); // Jump (+y)
-key_shot = mouse_check_button(mb_left); // Shot
+key_shoot = mouse_check_button(mb_left); // Shoot
 #endregion
 
 #region MOVEMENT
@@ -47,24 +47,33 @@ if (count_weapons > 1) {
 	switch (keyboard_key) {
 		case ord("1"):
 			weapon = "pistol";
+			fire_delay = 30;
 			break;
 		case ord("2"):
 			weapon = "shotgun";
+			fire_delay = 60;
 			break;
 	}
 }
 
-// Shot
+// Shoot
 if (weapon != "") {	
-	if (key_shot) {
-		var fire_sprite = asset_get_index("spr_player_" + string(weapon) + "_fire");
-		sprite_index = fire_sprite;
-	
-		instance_create_layer(x, y, "lyr_bullet", obj_bullet);
+	if (key_shoot) {
+		if (can_shoot) {
+			can_shoot = false;
+			
+			// Wait selected weapon fire delay
+			alarm[0] = fire_delay;
+			
+			instance_create_layer(x, y, "lyr_bullet", obj_bullet);
+		}
+		
+		// Change player sprite to firing weapon
+		sprite_index = asset_get_index("spr_player_" + string(weapon) + "_fire");
 	}
 	else {
-		var sprite = asset_get_index("spr_player_" + string(weapon));
-		sprite_index = sprite;
+		// Change player sprite to weapon
+		sprite_index = asset_get_index("spr_player_" + string(weapon));
 	}
 }
 

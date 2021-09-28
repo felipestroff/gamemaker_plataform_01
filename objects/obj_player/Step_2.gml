@@ -1,3 +1,4 @@
+/// @description Following camera
 #region VIEW
 
 // Move current view to half width and height, by player x,y

@@ -1,4 +1,4 @@
-if (can_damage) {
+if (!dead && can_damage) {
 	can_damage = false;
 			
 	// Wait selected weapon fire delay

@@ -1,3 +1,7 @@
+/// @description Death
 // Move player to start
-x = obj_portal.x;
-y = obj_portal.y;
+x = xstart;
+y = ystart;
+
+// Reset HP
+hp = 100;

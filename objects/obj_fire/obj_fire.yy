@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_player_status_01",
-    "path": "sprites/spr_player_status_01/spr_player_status_01.yy",
+    "name": "spr_fire",
+    "path": "sprites/spr_fire/spr_fire.yy",
   },
   "solid": false,
   "visible": true,
@@ -22,17 +22,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "interface",
-    "path": "folders/Objects/interface.yy",
+    "name": "enemies",
+    "path": "folders/Objects/enemies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_player_status",
+  "name": "obj_fire",
   "tags": [],
   "resourceType": "GMObject",
 }

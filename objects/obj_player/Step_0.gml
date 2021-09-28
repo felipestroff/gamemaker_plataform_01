@@ -7,7 +7,7 @@ key_enter = keyboard_check(vk_enter); // Enter
 #endregion
 
 // If player is not dead
-if (!dead) {
+if (hp > 0) {
 	#region MOVEMENT
 	
 	var move = key_right - key_left;
@@ -90,8 +90,8 @@ if (!dead) {
 #region HP
 
 if (hp <= 0) {
-	dead = true;
-	
+	can_damage = false;
+
 	sprite_index = asset_get_index("spr_player_dead");
 	image_alpha = 1;
 	
@@ -102,7 +102,7 @@ if (hp <= 0) {
 	
 		// Reset attrs
 		hp = 100;
-		dead = false;
+		can_damage = true;
 	}
 }
 

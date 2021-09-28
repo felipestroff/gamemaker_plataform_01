@@ -1,11 +1,10 @@
+/// @description I.A
 var player = obj_player;
 var player_direction = point_direction(x, y, player.x, player.y);
 
-image_speed = spd;
-
 #region MOVEMENT
 
-if (instance_exists(player) && !player.dead) {
+if (instance_exists(player) && player.hp > 0) {
 	// Follow player
 	if (distance_to_object(player) < sight) {
 		// Check player direction to follow the player
@@ -24,7 +23,6 @@ if (instance_exists(player) && !player.dead) {
 	else {
 		speed = 0;
 		image_index = 0;
-		image_speed = speed;
 	}
 }
 

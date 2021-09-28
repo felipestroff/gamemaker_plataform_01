@@ -8,4 +8,3 @@ count_weapons = 0;
 can_shoot = true;
 fire_delay = 0;
 can_damage = true;
-dead = false;

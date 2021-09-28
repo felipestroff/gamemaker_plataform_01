@@ -1,0 +1,1 @@
+/// @description Double bullet damage

@@ -1,7 +1,8 @@
 spd = 0;
 dmg = 0;
-
-var player = obj_player;
+special_dmg = 0;
+player = obj_player;
+fire = "";
 
 x = player.x;
 y = player.y;
@@ -18,7 +19,8 @@ else {
 image_angle = direction;
 
 // Change bullet sprite for weapon
-sprite_index = asset_get_index("spr_bullet_" + string(player.weapon))
+sprite_index = asset_get_index("spr_bullet_" + string(player.weapon));
+image_speed = 0.2;
 
 // Check player weapon
 switch (player.weapon) {

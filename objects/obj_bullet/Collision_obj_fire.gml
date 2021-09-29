@@ -1,6 +1,6 @@
 /// @description Fire damage
 // Check player weapon
-switch (player.weapon) {
+switch (player.weapon.alias) {
 	case "pistol":
 	case "shotgun":
 		special_dmg = dmg * 1.25;

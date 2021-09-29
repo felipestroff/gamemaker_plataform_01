@@ -1,2 +1,1 @@
-/// @description Destroy
-instance_destroy();
+instance_place(0, 0, obj_pistol);

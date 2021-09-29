@@ -41,8 +41,8 @@ if (hp > 0) {
 		image_xscale = sign(hspd);
 	}
 	else {
-		if (weapon != "") {
-			sprite_index = asset_get_index("spr_player_" + string(weapon) + "_idle");
+		if (array_length(weapons) > 0) {
+			sprite_index = asset_get_index("spr_player_" + weapon.alias + "_idle");
 		}
 		else {
 			sprite_index = asset_get_index("spr_player_idle");
@@ -52,45 +52,43 @@ if (hp > 0) {
 	if (vspd != 0) {
 		sprite_index = asset_get_index("spr_player_jump");
 	}
-	
-	// Set movement
-	x = x + hspd;
-	y = y + vspd;
 
 	#endregion
 
 	#region WEAPONS
 
-	// Slots
-	if (count_weapons > 1) {
-		switch (keyboard_key) {
-			case ord("1"):
-				weapon = "pistol";
-				fire_delay = 30;
-				break;
-			case ord("2"):
-				weapon = "shotgun";
-				fire_delay = 60;
-				break;
+	if (array_length(weapons) > 0) {
+		// Enable slot for more weapons
+		if (array_length(weapons) > 1) {
+			switch (keyboard_key) {
+				case ord("1"):
+					weapon = weapons[0];
+					break;
+				case ord("2"):
+					weapon = weapons[1];
+					break;
+			}
 		}
-	}
-
-	// Shoot
-	if (weapon != "") {	
-		if (key_shoot) {
-			if (can_shoot) {
+	
+		// Shoot
+		if (key_shoot && !key_jump) {
+			hspd = 0;
+			
+			if (can_shoot && weapon.bullet_count > 0) {
 				can_shoot = false;
 			
 				// Wait selected weapon fire delay
-				alarm[0] = fire_delay;
+				alarm[0] = weapon.fire_delay;
 				
 				// Change player sprite to firing weapon
-				sprite_index = asset_get_index("spr_player_" + string(weapon) + "_firing");
+				sprite_index = asset_get_index("spr_player_" + weapon.alias + "_firing");
 			
 				instance_create_layer(x, y, "lyr_bullet", obj_bullet);
+				
+				weapon.bullet_count -= 1;
 			}
 			else {
-				sprite_index = asset_get_index("spr_player_" + string(weapon) + "_fire_idle");
+				sprite_index = asset_get_index("spr_player_" + weapon.alias + "_fire_idle");
 			}
 		}
 	}
@@ -118,3 +116,7 @@ if (hp <= 0) {
 }
 
 #endregion
+
+// Set movement
+x = x + hspd;
+y = y + vspd;

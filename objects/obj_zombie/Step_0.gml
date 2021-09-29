@@ -1,21 +1,42 @@
 /// @description I.A
+#region MOVEMENT
+
+hspd = spd;
+vspd = vspd + grv;
+
+// Horizontal collision
+if (place_meeting(x + hspd, y, obj_block)) {
+	if (image_xscale == 1) {
+		x -= hspd;
+	}
+	else {
+		x += hspd;
+	}
+}
+
+// Vertical collision
+if (place_meeting(x, y + vspd,  obj_block)) {
+	while (!place_meeting(x, y + sign(vspd), obj_block)) {
+		y = y + sign(vspd);
+	}
+	vspd = 0;
+}
+
+// Follow player
 var player = obj_player;
 var player_direction = point_direction(x, y, player.x, player.y);
 
-#region MOVEMENT
-
 if (instance_exists(player) && player.hp > 0) {
-	// Follow player
 	if (distance_to_object(player) < sight) {
 		// Check player direction to follow the player
 		// Right
 		if (player_direction < 45 || player_direction >= 315) {
-			x += spd;
+			x += hspd;
 			image_xscale = 1;
 		}
 		// Left
 		else if (player_direction >= 135 && player_direction < 225) {
-			x -= spd;
+			x -= hspd;
 			image_xscale = -1;
 		}
 		
@@ -23,10 +44,12 @@ if (instance_exists(player) && player.hp > 0) {
 	}
 	// Stop
 	else {
-		speed = 0;
 		sprite_index = asset_get_index("spr_zombie_idle");
 	}
 }
+
+// Set movement
+y = y + vspd;
 
 #endregion
 

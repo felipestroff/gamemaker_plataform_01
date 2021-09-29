@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_player_status_01",
-    "path": "sprites/spr_player_status_01/spr_player_status_01.yy",
+    "name": "spr_planet_01",
+    "path": "sprites/spr_planet_01/spr_planet_01.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,11 +27,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "interface",
-    "path": "folders/Objects/interface.yy",
+    "name": "misc",
+    "path": "folders/Objects/misc.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_player_status",
+  "name": "obj_planet_01",
   "tags": [],
   "resourceType": "GMObject",
 }

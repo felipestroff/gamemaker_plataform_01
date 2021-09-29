@@ -19,11 +19,11 @@ else {
 image_angle = direction;
 
 // Change bullet sprite for weapon
-sprite_index = asset_get_index("spr_bullet_" + string(player.weapon));
+sprite_index = asset_get_index("spr_bullet_" + player.weapon.alias);
 image_speed = 0.2;
 
 // Check player weapon
-switch (player.weapon) {
+switch (player.weapon.alias) {
 	case "pistol":
 		y = y + 6;
 		dmg = random_range(15, 35);

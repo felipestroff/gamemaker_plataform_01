@@ -1,3 +1,4 @@
-count_weapons = count_weapons + 1;
-fire_delay = other.fire_delay;
-weapon = "shotgun";
+weapon = other;
+weapons[1] = weapon;
+
+instance_destroy(other);

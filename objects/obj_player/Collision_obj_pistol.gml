@@ -1,3 +1,3 @@
 count_weapons = count_weapons + 1;
-fire_delay = obj_pistol.fire_delay;
+fire_delay = other.fire_delay;
 weapon = "pistol";

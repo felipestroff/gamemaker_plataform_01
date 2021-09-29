@@ -1,4 +1,4 @@
-hp -= obj_bullet.dmg;
+hp -= other.dmg;
 
 image_blend = 200;
 

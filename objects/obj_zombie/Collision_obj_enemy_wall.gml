@@ -6,3 +6,5 @@ if (image_xscale == 1) {
 else {
 	x += spd;
 }
+
+sprite_index = asset_get_index("spr_zombie_idle");

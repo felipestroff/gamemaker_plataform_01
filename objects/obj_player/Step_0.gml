@@ -64,10 +64,6 @@ if (hp > 0) {
 	if (vspd != 0) {
 		sprite_index = asset_get_index("spr_player_jump");
 	}
-	
-	// Set full movement
-	x = x + hspd;
-	y = y + vspd;
 
 	#endregion
 
@@ -138,3 +134,7 @@ if (hp <= 0) {
 }
 
 #endregion
+
+// Set full movement
+x = x + hspd;
+y = y + vspd;

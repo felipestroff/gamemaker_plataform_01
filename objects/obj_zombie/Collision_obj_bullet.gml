@@ -1,8 +1,4 @@
-var bullet = obj_bullet;
-
-hp -= bullet.dmg;
-
-instance_destroy(bullet);
+hp -= obj_bullet.dmg;
 
 image_blend = 200;
 

@@ -25,12 +25,12 @@ image_speed = 0.2;
 // Check player weapon
 switch (player.weapon) {
 	case "pistol":
-		y = y + 9;
+		y = y + 6;
 		dmg = random_range(15, 35);
 		spd = 10;
 		break;
 	case "shotgun":
-		y = y + 14;
+		y = y + 9;
 		dmg = random_range(50, 100);
 		spd = 15;
 		break;

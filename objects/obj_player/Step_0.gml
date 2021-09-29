@@ -36,9 +36,21 @@ if (hp > 0) {
 		vspd -= 8;
 	}
 	
-	// Set image direction
 	if (hspd != 0) {
+		sprite_index = asset_get_index("spr_player_move");
 		image_xscale = sign(hspd);
+	}
+	else {
+		if (weapon != "") {
+			sprite_index = asset_get_index("spr_player_" + string(weapon) + "_idle");
+		}
+		else {
+			sprite_index = asset_get_index("spr_player_idle");
+		}
+	}
+	
+	if (vspd != 0) {
+		sprite_index = asset_get_index("spr_player_jump");
 	}
 	
 	// Set movement
@@ -71,16 +83,15 @@ if (hp > 0) {
 			
 				// Wait selected weapon fire delay
 				alarm[0] = fire_delay;
+				
+				// Change player sprite to firing weapon
+				sprite_index = asset_get_index("spr_player_" + string(weapon) + "_firing");
 			
 				instance_create_layer(x, y, "lyr_bullet", obj_bullet);
 			}
-		
-			// Change player sprite to firing weapon
-			sprite_index = asset_get_index("spr_player_" + string(weapon) + "_fire");
-		}
-		else {
-			// Change player sprite to weapon
-			sprite_index = asset_get_index("spr_player_" + string(weapon));
+			else {
+				sprite_index = asset_get_index("spr_player_" + string(weapon) + "_fire_idle");
+			}
 		}
 	}
 

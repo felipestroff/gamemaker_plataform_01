@@ -4,8 +4,10 @@
 hspd = spd;
 vspd = vspd + grv;
 
+var block = obj_block;
+
 // Horizontal collision
-if (place_meeting(x + hspd, y, obj_block)) {
+if (place_meeting(x + hspd, y, block)) {
 	if (image_xscale == 1) {
 		x -= hspd;
 	}
@@ -15,8 +17,8 @@ if (place_meeting(x + hspd, y, obj_block)) {
 }
 
 // Vertical collision
-if (place_meeting(x, y + vspd,  obj_block)) {
-	while (!place_meeting(x, y + sign(vspd), obj_block)) {
+if (place_meeting(x, y + vspd,  block)) {
+	while (!place_meeting(x, y + sign(vspd), block)) {
 		y = y + sign(vspd);
 	}
 	vspd = 0;

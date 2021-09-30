@@ -9,4 +9,5 @@ weapons = [];
 can_shoot = true;
 can_damage = true;
 
+// Animation speed
 image_speed = 0.1;

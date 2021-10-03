@@ -8,6 +8,7 @@ weapon = undefined;
 weapons = [];
 can_shoot = true;
 can_damage = true;
+state = "idle";
 
 // Animation speed
 image_speed = 0.1;

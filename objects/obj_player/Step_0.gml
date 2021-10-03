@@ -1,7 +1,9 @@
 #region CONTROLS
 key_right = keyboard_check(ord("D")); // Right (+x)
 key_left = keyboard_check(ord("A")); // Left (-x)
-key_jump = keyboard_check(vk_space); // Jump (+y)
+key_up = keyboard_check(ord("W")); // Up (-y)
+key_down = keyboard_check(ord("S")); // Down (+y)
+key_jump = keyboard_check(vk_space); // Jump (-y)
 key_shoot = mouse_check_button(mb_left); // Shoot
 key_enter = keyboard_check(vk_enter); // Enter
 #endregion
@@ -42,27 +44,43 @@ if (hp > 0) {
 		}
 	}
 	
+	// Vertical collision with stairs
+	if (place_meeting(x, y + vspd,  obj_stair) && !place_meeting(x, y + vspd,  obj_block)) {
+		// Reset vertical speed
+		vspd = 0;
+		
+		if (key_up) {
+			vspd -= 2;
+		}
+		else if (key_down) {
+			vspd += 2;
+		}
+	}
+	
 	// Sprites
 	// Moving ?
 	if (hspd != 0) {
-		sprite_index = asset_get_index("spr_player_move");
+		state = "move";
+		image_speed = 0.3;
 		image_xscale = sign(hspd);
 	}
 	// Idle
 	else {
 		// Weapon animation
 		if (array_length(weapons) > 0) {
-			sprite_index = asset_get_index("spr_player_" + weapon.alias + "_idle");
+			state = weapon.alias + "_idle";
 		}
 		// Normal animation
 		else {
-			sprite_index = asset_get_index("spr_player_idle");
+			state = "idle"
 		}
+		
+		image_speed = 0.1;
 	}
 	
 	// Jumping?
 	if (vspd != 0) {
-		sprite_index = asset_get_index("spr_player_jump");
+		state = "jump";
 	}
 
 	#endregion
@@ -94,8 +112,7 @@ if (hp > 0) {
 				// Wait selected weapon fire delay
 				alarm[0] = weapon.fire_delay;
 				
-				// Change player sprite to firing weapon
-				sprite_index = asset_get_index("spr_player_" + weapon.alias + "_firing");
+				state =  weapon.alias + "_firing";
 			
 				// Fire
 				instance_create_layer(x, y, "lyr_bullet", obj_bullet);
@@ -104,18 +121,25 @@ if (hp > 0) {
 				weapon.bullet_count -= 1;
 			}
 			else {
-				sprite_index = asset_get_index("spr_player_" + weapon.alias + "_fire_idle");
+				state = weapon.alias + "_fire_idle";
 			}
 		}
 	}
 
 	#endregion
+	
+	// Change player sprite by current state
+	sprite_index = asset_get_index("spr_player_" + state);
 }
 
 #region HP
 
 // Death
 if (hp <= 0) {
+	// Reset speeds
+	hspd = 0;
+	vspd = 0;
+	
 	can_damage = false; // Disable damage
 
 	sprite_index = asset_get_index("spr_player_dead"); // Change sprite

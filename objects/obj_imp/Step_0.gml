@@ -77,7 +77,6 @@ if (instance_exists(player) && player.hp > 0) {
 		
 		// Alert indicator
 		if (can_alert) {
-			// Damage indicator
 			with instance_create_layer(x, (bbox_top - 20), "lyr_interface", obj_text) {
 				text = "!";
 				size = 2;

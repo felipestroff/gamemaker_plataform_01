@@ -26,12 +26,12 @@ image_speed = 0.2;
 switch (player.weapon.alias) {
 	case "pistol":
 		y = y + 6;
-		dmg = random_range(15, 35);
+		dmg = irandom_range(15, 35);
 		spd = 10;
 		break;
 	case "shotgun":
 		y = y + 9;
-		dmg = random_range(50, 100);
+		dmg = irandom_range(50, 100);
 		spd = 15;
 		break;
 }

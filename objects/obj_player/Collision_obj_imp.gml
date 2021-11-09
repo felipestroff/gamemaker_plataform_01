@@ -8,10 +8,8 @@ if (hp > 0 && can_damage) {
 	
 	image_alpha = 0.5;
 	
-	// Fireball
-	// Check if is moving fire
-	if (other.speed > 0) {
-		// Destroy fireball
-		other.alarm[0] = 1;
+	// Damage recoil
+	if (vspd == 0) {
+		x += other.sprite_width;
 	}
 }

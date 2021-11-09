@@ -1,0 +1,1 @@
+draw_text_ext_transformed_color(x, y, text, 5, 500, size, size, 0, color_1, color_1, color_2, color_2, 1);

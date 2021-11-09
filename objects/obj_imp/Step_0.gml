@@ -32,6 +32,9 @@ var player_direction = point_direction(x, y, player.x, player.y);
 if (instance_exists(player) && player.hp > 0) {
 	// Ranged attack
 	if (distance_to_object(player) < sight) {
+		draw_set_halign(fa_center);
+		draw_text(x,y-20,"this should display above the player's head");
+		
 		// Meele attack when player is close to enemy or enemy is not blocked by block/wall
 		if (distance_to_object(player) <= dmg_range && !place_meeting(x + hspd, y, enemy_wall)) {
 			// Check player direction to follow the player
@@ -71,9 +74,25 @@ if (instance_exists(player) && player.hp > 0) {
 				alarm[1] = special_dmg_delay;
 			}
 		}
+		
+		// Alert indicator
+		if (can_alert) {
+			// Damage indicator
+			with instance_create_layer(x, (bbox_top - 20), "lyr_interface", obj_text) {
+				text = "!";
+				size = 2;
+				color_1 = c_orange;
+				color_2 = c_yellow;
+				alarm[0] = 30;
+			}
+			
+			can_alert = false;
+		}
 	}
 	// Stop
 	else {
+		can_alert = true;
+		
 		sprite_index = asset_get_index("spr_imp_idle");
 	}
 }

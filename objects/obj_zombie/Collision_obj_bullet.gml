@@ -1,4 +1,6 @@
-hp -= other.dmg;
+var bullet_dmg =  other.dmg;
+
+hp -= bullet_dmg;
 
 // Damage recoil
 if (image_xscale == 1) {
@@ -6,6 +8,15 @@ if (image_xscale == 1) {
 }
 else {
 	x += obj_player.weapon.dmg_recoil;
+}
+
+// Damage indicator
+with instance_create_layer(x, (bbox_top - 20), "lyr_interface", obj_text) {
+	text = bullet_dmg;
+	size = 1;
+	color_1 = c_yellow;
+	color_2 = c_red;
+	alarm[0] = 40;
 }
 
 // Damage red effect

@@ -43,9 +43,25 @@ if (instance_exists(player) && player.hp > 0) {
 		}
 		
 		sprite_index = asset_get_index("spr_zombie_move");
+		
+		// Alert indicator
+		if (can_alert) {
+			// Damage indicator
+			with instance_create_layer(x, (bbox_top - 20), "lyr_interface", obj_text) {
+				text = "!";
+				size = 2;
+				color_1 = c_orange;
+				color_2 = c_yellow;
+				alarm[0] = 30;
+			}
+			
+			can_alert = false;
+		}
 	}
 	// Stop
 	else {
+		can_alert = true;
+		
 		sprite_index = asset_get_index("spr_zombie_idle");
 	}
 }

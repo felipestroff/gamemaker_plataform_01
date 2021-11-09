@@ -30,7 +30,8 @@ if (hp > 0) {
 	// Vertical collision with blocks
 	if (place_meeting(x, y + vspd,  obj_block)) {
 		// Jump
-		if (key_jump) {
+		if (key_jump && can_jump) {
+			can_jump = false;
 			vspd -= jump_spd;
 		}
 		// Normal
@@ -41,12 +42,11 @@ if (hp > 0) {
 			}
 			// Stop
 			vspd = 0;
+			can_jump = true;
 		}
 	}
-	
 	// Vertical collision with stairs
-	if (place_meeting(x, y + vspd,  obj_stair) && !place_meeting(x, y + vspd,  obj_block)) {
-		// Reset vertical speed
+	else if (place_meeting(x, y + vspd,  obj_stair)) {
 		vspd = 0;
 		
 		if (key_up) {
@@ -78,7 +78,7 @@ if (hp > 0) {
 		image_speed = 0.1;
 	}
 	
-	// Jumping?
+	// Jumping?		
 	if (vspd != 0) {
 		state = "jump";
 	}

@@ -8,6 +8,7 @@ weapon = undefined;
 weapons = [];
 can_shoot = true;
 can_damage = true;
+can_jump = true;
 state = "idle";
 
 // Animation speed

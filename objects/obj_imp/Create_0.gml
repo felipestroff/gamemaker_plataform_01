@@ -1,10 +1,10 @@
-hp = 125;
+hp = 150;
 sight = 600;
 spd = 3;
 hspd = 0;
 vspd = 0;
 grv = 0.4;
-dmg = irandom_range(15, 30);
+dmg = irandom_range(20, 35);
 dmg_delay = 60;
 dmg_range = 200;
 special_dmg = irandom_range(30, 50);

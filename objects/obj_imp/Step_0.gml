@@ -32,9 +32,6 @@ var player_direction = point_direction(x, y, player.x, player.y);
 if (instance_exists(player) && player.hp > 0) {
 	// Ranged attack
 	if (distance_to_object(player) < sight) {
-		draw_set_halign(fa_center);
-		draw_text(x,y-20,"this should display above the player's head");
-		
 		// Meele attack when player is close to enemy or enemy is not blocked by block/wall
 		if (distance_to_object(player) <= dmg_range && !place_meeting(x + hspd, y, enemy_wall)) {
 			// Check player direction to follow the player
@@ -49,7 +46,7 @@ if (instance_exists(player) && player.hp > 0) {
 				image_xscale = -1;
 			}
 		
-			//sprite_index = asset_get_index("spr_imp_meele_attack");
+			//sprite_index = asset_get_index("spr_imp_move");
 		}
 		// Ranged attack
 		else {
@@ -68,7 +65,7 @@ if (instance_exists(player) && player.hp > 0) {
 					image_blend = 250;
 				}
 			
-				//sprite_index = asset_get_index("spr_imp_ranged_attack");
+				//sprite_index = asset_get_index("spr_imp_attack");
 		
 				// Wait special damage delay
 				alarm[1] = special_dmg_delay;

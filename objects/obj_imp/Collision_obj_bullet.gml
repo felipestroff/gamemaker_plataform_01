@@ -3,12 +3,12 @@ var bullet_dmg =  other.dmg;
 hp -= bullet_dmg;
 
 // Damage recoil
-if (image_xscale == 1) {
+/*if (image_xscale == 1) {
 	x -= obj_player.weapon.dmg_recoil;
 }
 else {
 	x += obj_player.weapon.dmg_recoil;
-}
+*/
 
 // Damage indicator
 with instance_create_layer(x, (bbox_top - 20), "lyr_interface", obj_text) {

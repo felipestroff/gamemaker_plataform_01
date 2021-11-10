@@ -3,7 +3,7 @@
 switch (player.weapon.alias) {
 	case "pistol":
 	case "shotgun":
-		special_dmg = dmg * 1.25;
+		special_dmg = floor(dmg * 1.25);
 		sprite_index = asset_get_index("spr_bullet_fire");
 		break;
 }

@@ -14,7 +14,6 @@
     {"id":{"name":"spr_shotgun","path":"sprites/spr_shotgun/spr_shotgun.yy",},"order":3,},
     {"id":{"name":"spr_player_dead","path":"sprites/spr_player_dead/spr_player_dead.yy",},"order":6,},
     {"id":{"name":"room_02","path":"rooms/room_02/room_02.yy",},"order":1,},
-    {"id":{"name":"font_dmg","path":"fonts/font_dmg/font_dmg.yy",},"order":0,},
     {"id":{"name":"spr_bullet_block","path":"sprites/spr_bullet_block/spr_bullet_block.yy",},"order":4,},
     {"id":{"name":"spr_player_status_01","path":"sprites/spr_player_status_01/spr_player_status_01.yy",},"order":0,},
     {"id":{"name":"spr_player_shotgun_fire_idle","path":"sprites/spr_player_shotgun_fire_idle/spr_player_shotgun_fire_idle.yy",},"order":11,},

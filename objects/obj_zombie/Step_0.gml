@@ -29,7 +29,7 @@ var player = obj_player;
 var player_direction = point_direction(x, y, player.x, player.y);
 
 if (instance_exists(player) && player.hp > 0) {
-	if (distance_to_object(player) < sight) {
+	if (distance_to_object(player) <= sight) {
 		// Check player direction to follow the player
 		// Right
 		if (player_direction < 45 || player_direction >= 315) {

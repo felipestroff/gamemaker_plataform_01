@@ -172,8 +172,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "collision",
+    "path": "folders/Sprites/collision.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_enemy_wall",

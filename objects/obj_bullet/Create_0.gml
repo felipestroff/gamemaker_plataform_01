@@ -1,5 +1,6 @@
 spd = 0;
 dmg = 0;
+dmg_recoil = 0;
 special_dmg = 0;
 player = obj_player;
 fire = "";
@@ -27,11 +28,13 @@ switch (player.weapon.alias) {
 	case "pistol":
 		y = y + 6;
 		dmg = irandom_range(15, 35);
+		dmg_recoil = 5;
 		spd = 10;
 		break;
 	case "shotgun":
 		y = y + 9;
 		dmg = irandom_range(50, 100);
+		dmg_recoil = 30;
 		spd = 15;
 		break;
 }

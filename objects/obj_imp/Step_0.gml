@@ -54,7 +54,7 @@ if (instance_exists(player) && player.hp > 0) {
 		
 		// Alert indicator
 		if (can_alert) {
-			with instance_create_layer(x, (bbox_top - 20), "lyr_interface", obj_text) {
+			with instance_create_layer(x, (bbox_top - 30), "lyr_interface", obj_text) {
 				text = "!";
 				size = 2;
 				color_1 = c_orange;

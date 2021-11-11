@@ -61,7 +61,7 @@ if (hp > 0) {
 	// Moving ?
 	if (hspd != 0) {
 		state = "move";
-		image_speed = 0.3;
+		image_speed = 0.25;
 		image_xscale = sign(hspd);
 	}
 	// Idle
